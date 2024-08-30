@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Colocando a fonte do html inteiro em 62.5% para trabalar na medida rem */
+    font-size: 62.5%;
+    /* Modificando o comportamento de rolagem(scroll behavior) para smooth(suave) */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    /* Agora a fonte tem 16px, relativo a 1.6 * 62.5 = 100% */
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Em todos os a, tira o sublinhado */
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 5.5rem;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+.responsive-table {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    margin-top: 3rem;
+    min-width: 60rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td, table th {
+    white-space: nowrap;
+    padding: 1rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-white);
+}
+
+tfoot td, table th {
+    background-color: var(--light-gray-white);
+}

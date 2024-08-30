@@ -1,0 +1,29 @@
+.main-bg {
+    background-image: url('../img/rose-petals.svg');
+    /* Faz a imagem ocupar cobrir(cover) toda tela */
+    background-size: cover;
+    /* Alinhando background */
+    background-position: center center;
+    color: var(--primary-color);
+}
+
+.white-bg {
+    /* Faz a imagem ocupar cobrir(cover) toda tela */
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    /* Adicionando por meio de var 3rem(30px) no padding */
+    padding: var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.menu-spacing {
+    height: 65px;
+}

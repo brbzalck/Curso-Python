@@ -1,0 +1,58 @@
+/* pseudoclasse hover: sempre que em heading eu passar o mouse em cima(hover) */
+.heading:hover {
+    /* Vai fazer uma transição que dura 1s no efeito ease-in-out */
+    transition: all 1s ease-in-out;
+    background: greenyellow;
+}
+
+/* pseudoclasse link: Quando meu link não foi visitado */
+a:link {
+    color: deeppink;
+}
+/* pseudoclasse visited: Quando meu link foi visitado */
+a:visited {
+    color: darkorange;
+}
+
+a:hover {
+    text-decoration: none;
+}
+/* Quando o input for selecionado=Focus */
+input:focus {
+    /* sombra nas bordas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1px solid black;
+}
+/* Se o input estiver desativado, cursor muda de formato */
+input:disabled {
+    cursor: not-allowed;
+}
+/* Se o input for selecionado o primeiro P adjacente muda de cor */
+input:checked + p {
+    background: red;
+}
+/* Se o input checked NÃO estiver selecionado, o próximo P depois do checked muda de cor */
+input:not(:checked) + p {
+    background: greenyellow;
+}
+/* Ultimo filho da lista */
+.pai .lista li:last-child {
+    background: goldenrod;
+}
+/* Css nos parágrafos de classe .paragrafo menos(not) nos de class .meio */
+.paragrafo:not(.meio) {
+    color: blueviolet;
+}
+/* Css com nth-child para filhos de ul em li */
+section ul li:nth-child(odd) {
+background: purple;
+}
+/*  odd impar even par para todos elemtos da lista */
+section ul li:nth-child(even) {
+background: yellowgreen;
+}
+/* 3n Para pular de 3 em 3 */
+section ul li:nth-child(3n) {
+background: darkcyan;
+}

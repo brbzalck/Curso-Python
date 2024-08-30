@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id e Classes</title>
+    <!-- Aqui fica o css, responsável pela aparência(pele) -->
+    <style>
+        h1{
+            background: orange;
+        }
+        p{
+            background: greenyellow;
+        }
+        #cabecalho-dois{
+            background: green;
+        }
+        .fundo-rosa{
+            background: pink;
+        }
+        .cor{
+            color: blueviolet
+        } 
+        /* Acessando Tags|h1-p1 por #ID e .Classes */
+    </style>
+</head>
+<!-- Definindo id=""(maior prioridade) class=""(segunda maior) h1 ou p(terceira maior) -->
+<body>
+    <h1 id="cabecalho-um" class="fundo-rosa borda-esquerda" >
+        Meu Cabeçalho
+    </h1>
+    <h1 id="cabecalho-dois" class="fundo-rosa">
+        Meu Outro Cabeçalho
+    </h1>
+    <!-- ID tem que ser único, porém CLASSES podem se repetir
+     e existirem em conjunto num cabeçalho(linha9) -->
+     <p> Um parágrafo <b class="cor">qualquer.</b> </p>
+     <p> Um parágrafo <b class="cor">qualquer.</b> </p>
+     <p> Um parágrafo <b class="cor">qualquer.</b> </p>
+     <p> Um parágrafo <b class="cor">qualquer.</b> </p>
+     <!-- <b> Deixa em negrito </b> -->
+</html>

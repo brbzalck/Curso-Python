@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <style>
+        /* Tirando a margem e padding dos blocos e trabalhando somente com o conteúdo-content area */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* <nav>=Usado aqui para menu, trocando o conteudo nav de cor, display flex para alinhar items ao lado E centralizando items */
+        nav {
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+        }
+        /* Em todos <a> de nav, conteudo em branco, */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+            /* transformando o display em block, para conseguir empurrar o conteudo com padding */
+            display: block;
+            /* Dimensionando o conteudo de nav com padding */
+            padding: 15px 50px 15px 15px;
+        }
+
+        /* sempre que o mouse pairar(hover) sobre os links<a>, muda de cor */
+        nav a:hover {
+            background: rgba(0,0,0,0.1);
+        }
+
+        /* Em todos os <ul> de <nav> troca o display para flex(conteudo lado a lado) e tira o estilo da lista */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <aside> Conteúdo relacionado ao site -->
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+        </nav>
+    </aside>
+</body>
+</html>

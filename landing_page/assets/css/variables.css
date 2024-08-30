@@ -1,0 +1,8 @@
+/* :root para adicionar variáveis ao Css */
+:root {
+    --primary-color: #000000;
+    --white: #FFFFFF;
+    --light-gray-white: #EEEEEE;
+    --secondary-color: darkcyan;
+    --gap: 3rem;
+}

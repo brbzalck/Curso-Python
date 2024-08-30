@@ -1,0 +1,34 @@
+/* Para introduzir elementos tag depois(::after) ou antes(::before)*/
+ul li::before {
+    /* Adiciona um elemento */
+    content: ' - ';
+    color: darkcyan;
+    display: block;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* Css com pseudoelemento na Primeira letra de <p> */
+/* Modelo Revista */
+p::first-letter {
+    font-size: 100px;
+    display: block;
+    /* Para a letra flutuar á esquerda */
+    float: left;
+    margin: 0 10px 10px 0;
+}
+/* Para primeira linha do meu texto */
+p::first-line {
+    background-color: darkcyan;
+}
+/* Para quando selecionar o texto com o mouse */
+p::selection {
+    background-color: black;
+    color: white;
+}
+/* Para quando tiver um placeholder e precisar editá-lo */
+::placeholder {
+    color: darkorchid;
+}

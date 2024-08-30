@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetFlix Clone</title>
+    <style>
+        /* Tirando Margin e Padding(acolchoamento) */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Colocando uma imagem de background no corpo do site */
+        body {
+            background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/21a8ba09-4a61-44f8-8e2e-70e949c00c6f/e54a23b9-5f4f-4218-ba09-8e62ba01f9cc/BR-pt-20240722-POP_SIGNUP_TWO_WEEKS-perspective_WEB_f47ff160-2a29-4b8f-849f-20fecdea9010_large.jpg)
+        }
+
+        /* Trocando background do header com rgba(0,0,0,esfumaçado) */
+        #heading {
+            background: rgba(0, 0, 0, 0.7)
+            /* background: #e50914; */
+        }
+
+        /* Margem width, dysplay-flex usa o mesmo bloco/caixa, justfy-content coloca em lados opostos */
+        #heading div {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            /* Criando a margem, 0=p/cima p/baixo | lateral automática=auto */
+            margin: 0 auto;
+        }
+
+        /* Trocando em heading, quem tem a classe .h1: bordas, fonte e CapsLock */
+        #heading .h1 {
+            /* background: rgba(0, 0, 0, 0.5); */
+            padding: 15px 0px;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        /* Trocando em heading tag <a>: cor, decoração de texto e Fonte */
+        #heading a {
+            color: #e50914;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+    </style>
+</head>
+<!-- podemos entender que div são caixas - E para criar sites utilizamos exatamentes caixas :P -->
+<body>
+    <!-- <div style="width: 120px; height: 120px; background: red;">
+        Qualquer coisa dentro do div
+    </div> -->
+
+    <header id="heading">
+        <div>
+            <h1 class="h1">
+                <a href="#">NetFlix</a>
+            </h1>
+            <h2 class="h1">
+                <a href="#">Entrar</a>
+            </h2>
+        </div>
+    </header>
+    
+</body>
+</html>

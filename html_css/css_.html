@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css</title>
+    <!-- <link> rel=relacionado "stylesheet"=css href="caminho do arquivo"-->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <h1>Estou fora da div>section></h1>
+    <p>Tbm estou de fora</p>
+    <div>
+        <section>
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Adipisci eum laborum aperiam at nam voluptatem officiis unde
+                  error alias odio sit temporibus distinctio doloribus, repellat
+                   dolorum. Saepe a sapiente facilis?
+            </p>
+        </section>
+    </div>
+    <div>
+        <h1 class="color-blue">
+        Utilizando CSS por meio de classes em h1
+        </h1>
+    </div>
+    <div class="main-content">
+        <h1 class="heading">Css por class heading dentro da class main-content</h1>
+        <h2 class="heading"><p>selecionando heading específico</p></h2>
+        <p>
+        CSS por meio de classe em div que herda para todo o corpo, ou em específico
+        = .main-content p(muda somente os paragráfos da div com a class main-content)
+        </p>
+    </div>
+
+    <div class="pai">
+        <h1>Div Pai</h1>
+        <div class="filha pai">
+            <h1>Div Filha</h1>
+        </div>
+    </div>
+    <div class="classe-pai">
+        pai
+        <div class="classe-filha">
+            filha
+            <div class="classe-filha">
+                filha da filha
+            </div>
+        </div>
+    </div>
+    <div class="irmaos">
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="irmaos-em-class">
+        <div class="two">2</div>
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="two">2</div>
+        <div class="two">2</div>
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="two">2</div>
+        <div class="two">2</div>
+    </div>
+    <h1 class="selecionando-atributo" meu-atributo="valor">Css por atributo</h1>
+    <h1 class="selecionando-atributo" meu-atributo2="valor1 valor2 valor3">Css por atributo</h1>
+
+
+</body> 
+</html>

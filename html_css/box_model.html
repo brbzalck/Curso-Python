@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Content Area=Area do Conteúdo, Padding=Espaço entre Conteúdo e Borda, Border=Borda do Conteúdo, Margin=Margem entre Box de Conteudo-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            /* Padding e Border agora fazem parte do tamanho de Content(width/height) */
+            box-sizing: border-box; 
+        }
+
+        .section-one {
+            background-color: deeppink;
+            background-image: url(https://th.bing.com/th/id/OIP.efV-FEjTjiVwvIC6tL-j4AHaE8?rs=1&pid=ImgDetMain);
+            /* Configurando a imagem para se ajustar a box */
+            background-size: cover;
+            /* Centralizando a imagem na box */
+            background-position: center center;
+            color:red;
+            /* Definindo largura da box */
+            width: 200px;
+            /* Definindo altura da box */
+            height: 300px;
+            /* definindo tamanho de borda na box */
+            border: 10px solid black;
+            /* Formatação de dimenções começa em cima em sentido horário(cima, dir, baixo, esq) */
+            /* padding: 15px 5px 10px 5px; */
+            padding: 15px;
+            margin: 30px;
+        }
+        .section-two {
+            background: cyan;
+            /* Definindo altura da box */
+            height: 200px;
+            width: 200px;
+            /* definindo respectivamente: estilo de borda, largura, cores das bordas */
+            border-style: solid;
+            border-width: 10px;
+            border-bottom-color: yellow;
+            border-top-color: blueviolet;
+            border-left-color: yellowgreen;
+            border-right-color: orangered;
+            padding: 15px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="section-one">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem accusantium libero dolores ipsam nobis maxime quaerat, officiis, reprehenderit voluptatem sequi dolorum quam, sapiente adipisci quidem officia omnis perspiciatis deserunt repellat.</section>
+    <section class="section-two">Seção2</section>
+</body>
+</html>

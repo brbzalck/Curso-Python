@@ -1,0 +1,19 @@
+p {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    /* direction: rtl; Texto fica colado na direita*/
+    direction: ltr;
+    /* Espaços entre as letras */
+    letter-spacing: 1px;
+    /* Espaços estre as palavras */
+    word-spacing: 5px;
+    /* Altura da linha */
+    line-height: 25px;
+    /* Alinhamento de texto */
+    text-align: center;
+    /* text-indent: 20px; */
+    /* 1px(baixo-cima) 1px(direita-esq) 1px(opacidade) */
+    text-shadow: 1px 1px 1px darkcyan;
+    text-transform: capitalize;
+}

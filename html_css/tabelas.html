@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        table {
+            /* Colando as bordas das tabelas */
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        /* <td>=conteúdo do corpo da tabela , <th>= conteúdo título das colunas*/
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+        }
+        /* <caption>=descrição fora da tabela */
+        table caption {
+            caption-side: bottom;
+            font-style: italic;
+            text-align: right;
+        }
+        /* <tfoot> rodapé da tabela */
+        tfoot td, table th{
+            font-style: italic;
+            background-color:#ddd;
+        }
+        /* Class em div usada para deixar o site versátil em dispositívos móveis */
+        .table-reponsive {
+            /* Representada de tamanho completo */
+            max-width: 100%;
+            /* Se passar desse tamanho, vira um bloco arrastável */
+            overflow-x: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Meu texto introdutório</p>
+    <div class="table-reponsive">
+        <!-- Criando uma tabela -->
+        <table>
+            <!-- Opiconal, porém boa prática -->
+            <thead>
+                <!-- Descrição da tabela -->
+                <caption>Tabela sobre Alguma coisa</caption>
+                <!-- <tr> Linha - <th> Coluna -->
+                <tr>
+                    <th>Título da tabela</th>
+                    <th>Coluna 1</th>
+                    <th>Coluna 2</th>
+                </tr>
+            </thead>
+            <!-- Corpo da tabela -->
+            <tbody>
+                <tr>
+                    <td> Corpo da tabela</td>
+                    <td> Corpo 1</td>
+                    <td> Corpo 2</td>
+                </tr>
+                <tr>
+                    <!-- colspan para o valor ocupar duas colunas -->
+                    <td colspan="2"> Valor ocupa duas Colunas</td>
+                    <!-- rowspan para o valor ocupar duas linhas -->
+                    <td rowspan="2"> Corpo 2</td>
+                </tr>
+                <tr>
+                    <td> Corpo da tabela</td>
+                    <td> Corpo 1</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td> Rodapé tabela</td>
+                    <td> Total</td>
+                    <td> Total</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

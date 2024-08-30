@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+}
+
+/* .pai {
+
+} */
+
+.filha1, .filha2, .filha3 {
+    width: 300px;
+    height: 300px;
+    background-color: darkcyan;
+    margin: 10px;
+    position: static;
+}
+
+.filha3 {
+    /* Posição relativa a Div ou elemento mais próximo */
+    position: relative;
+    background-color: darkturquoise;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.filha2 {
+    /* fixed para fixar na tela, independente de rolagem da página, continua na posição */
+    position: fixed;
+    background-color: darkslategray;
+    right: 0;
+    margin-top: 100px;
+    /* Para especificar a ordem de absolute entre as divs(não sobrepor elementos) */
+    z-index: -1;
+}
+
+.filha1 {
+    /* Deixa o posição da div absoluta */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Gambiarra para fazer o absolute ficar bem no meio da tela */
+    margin-top: -150px;
+    margin-left: -150px;
+    z-index: 2;
+}
+
+.outra {
+    /* Exemplificando um span dentro da div com Position: absolute em relação a Div pai da span */
+    position: absolute;
+    font-size: 50px;
+    background-color: #fff;
+    right: 0;
+    bottom: 0;
+}
+
+ul {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+ul .sticky {
+    /* Mais utilizado com comportamento de rolagem, se caso for querer fixar na rolagem algum conteúdo */
+    position: sticky;
+    background: gray;
+    top: 0  ;
+}

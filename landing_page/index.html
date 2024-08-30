@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <!-- Importando fontes do google fonts -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/elements.css">
+    <link rel="stylesheet" href="assets/css/classes.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body id="home" class="main-bg">
+    <!-- arial-label, button(pdcs) -->
+    <input type="checkbox" aria-label="close-menu" id="close-menu" class="close-menu" role="button">
+    <label class="close-menu-label" for="close-menu" title="close menu"></label>
+    <aside class="menu white-bg">
+        <div class="main-content menu-content">
+        <h1 onclick="getElementById('close-menu').checked = false;">
+            <a href="#home">LOGO</a>
+        </h1>
+        <nav>
+            <ul onclick="getElementById('close-menu').checked = false;">
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#top3">Top 3</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </aside>
+
+    <div class="menu-spacing"></div>
+
+    <section id="intro" class="intro main-bg section">
+        <div class="main-content intro-content">
+            <div class="intro-text-content">
+                <h2>17 Open Source Alternatives to Your Favorite Software and Apps 🔥👨‍💻</h2>
+                <p>In the dynamic world of software and applications, many users are discovering the power and flexibility of open-source alternatives.</p>
+                <p>Whether you're looking to cut costs, avoid vendor lock-in, or explore new tools, open-source options offer customizable solutions that rival their proprietary counterparts.</p>
+                <p>In this article, we'll explore 17 powerful open-source tools that can effectively replace some of the most commonly used software and apps.</p>
+                <p>From diagramming and design platforms to API development and workflow automation, these alternatives are designed to enhance your productivity and workflow.</p>
+                <p>Each tool will include a direct link, category, description, top features, preview images, and links to the code and website for the initial impression.</p>
+            </div>
+            <div class="intro-img">
+                <img src="assets/img/opensource (2).svg" alt="Duas pessoas utilizando Nootebook com um circulo escrito 'CC' dentro">
+            </div>
+        </div>
+    </section>
+
+    <section id="top3" class="white-bg section">
+        <div class="main-content top3-content">
+            <h2>Top 3 Apps</h2>
+            <h6>Drawio</h6>
+            <p> Category: Diagrams
+            Open Source Alternative to: LucidChart <br>
+            Drawio is a free, open-source diagramming tool used for creating flowcharts, network diagrams, and other visuals.
+            It enhances productivity by offering an intuitive interface and seamless integration with commonly used platforms like Google Drive and GitHub.</p>
+            <h6>Penpot</h6>
+            <p>Category: Design
+            Open Source Alternative to: Figma <br>
+            Penpot is an open-source design and prototyping platform for cross-domain teams.
+            It streamlines design workflows by enabling real-time collaboration and flexible design systems.</p>
+            <h6>Hoppscotch</h6>
+            <p>Category: API Development
+            Open Source Alternative to: Postman <br>
+            Hoppscotch is a lightweight and fast open-source API development tool.
+            It boosts productivity with its user-friendly interface for testing APIs without the need for complex setups.</p>
+        </div>
+    </section>
+
+    <section id="grid-one" class="grid-one main-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Reasons to Choose</h2>
+            <p class="grid-description">Five reasons to choose each app</p>
+            <div class="grid">
+                <article>
+                    <h3 class="spacing">Drawio</h3>
+                <ol>
+                    <li>Free to use with no subscription costs.</li>
+                    <li>Can be used offline, unlike many cloud-based diagramming tools.</li>
+                    <li>Integrates seamlessly with popular platforms.</li>
+                    <li>Open-source, allowing access to code and improve it.</li>
+                    <li>User-friendly interface suitable for both beginners and professionals.</li>
+                </ol>
+                </article>
+                <article>
+                    <h3 class="spacing-2">Penpot</h3>
+                <ol>
+                    <li>Open-source with no vendor lock-in.</li>
+                    <li>Supports real-time collaboration across teams.</li>
+                    <li>Cross-platform compatibility, working in any web browser.</li>
+                    <li>Flexible design systems for better team collaboration.</li>
+                    <li>Great community support and continuous updates.</li>
+                </ol>
+                </article>
+                <article>
+                    <h3 class="spacing-3">Hoppscotch</h3>
+                <ol>
+                    <li>Lightweight and faster than most API testing tools.</li>
+                    <li>Open-source with active community contributions.</li>
+                    <li>Supports a wide range of API types, including REST, GraphQL, and WebSocket.</li>
+                    <li>No installation required; runs in the browser.</li>
+                    <li>Simple and intuitive user interface.</li>
+                </ol>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="grid-one white-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Gallery</h2>
+            <p class="gallery-description">Learning how to place random images on the website
+            </p>
+            <div class="grid">
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/fotografia-da-natureza-paisagem-lac_826551-4.jpg?w=360" alt="#">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/paisagem-foto-lago_665280-27617.jpg?w=360" alt="#">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/paisagem-de-praia-com-ia-generativa-com-vista-para-o-por-do-sol_569389-6018.jpg?w=360" alt="#">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/uma-imagem-da-paisagem-de-um-rio-com-montanhas-ao-fundo_900370-11696.jpg?w=360" alt="#">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/por-do-sol-esplendor-paisagem-tranquila-do-lago_574745-3172.jpg?w=360" alt="#">
+                </div>
+                <div class="gallery-img">
+                    <img src="https://img.freepik.com/fotos-premium/uma-foto-de-paisagem-com-rio-ou-lago-e-arvores-ao-por-do-sol-ia-geradora_653669-4138.jpg?w=360" alt="#">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="grid-one main-bg section">
+        <div class="main-content grid-one-content">
+            <h2 class="grid-main-heading">Recent Jobs</h2>
+            <div class="grid">
+                <article>
+                    <h3>A good one</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore perspiciatis illo illum corporis debitis esse sit nesciunt voluptates nulla soluta veritatis eaque inventore vel rem, sapiente laborum odio? Tenetur, aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure recusandae ut, non laboriosam culpa assumenda aperiam expedita corporis, dolore explicabo, eveniet officia nihil aliquid fuga. A aperiam rerum ipsa adipisci!</p>
+                </article>
+                <article>
+                    <h3>Great job</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae ipsam ut ipsa fugit distinctio nobis magnam, repellendus debitis, labore fuga suscipit neque porro? Doloribus architecto ratione quas omnis inventore consectetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur eaque unde, corrupti quos ut, ducimus esse mollitia deserunt at hic tempore repudiandae officia, eius sequi? Voluptatum est consequuntur sed.</p>
+                </article>
+                <article>
+                    <h3>The best</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione neque aperiam quibusdam incidunt culpa, eaque deleniti nesciunt placeat molestiae magni nulla adipisci, optio voluptate debitis, vero laboriosam omnis dolorem possimus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere cum saepe vel aut fugit cumque, minima culpa maxime, et rem quam! Esse distinctio neque quibusdam vitae quae blanditiis quasi delectus!</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="white-bg section">
+        <div class="main-content top3-content">
+            <h2>Pricing</h2>
+            <p>Price is the amount of money required to purchase a product or service. It reflects the value perceived by both the seller and the buyer. Pricing strategies can vary based on factors like market demand, production costs, competition, and brand positioning. Setting the right price is crucial for businesses to remain competitive while ensuring profitability.</p>
+            <div class="responsive-table">
+                <table>
+                    <caption>Pricing Table</caption>
+                    <thead>
+                        <tr>
+                        <th>Title 1</th>
+                        <th>Title 2</th>
+                        <th>Title 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Content 1</td>
+                            <td>Content 2</td>
+                            <td>Content 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content 1</td>
+                            <td>Content 2</td>
+                            <td>Content 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content 1</td>
+                            <td>Content 2</td>
+                            <td>Content 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content 1</td>
+                            <td>Content 2</td>
+                            <td>Content 3</td>
+                        </tr>
+                        <tr>
+                            <td>Content 1</td>
+                            <td>Content 2</td>
+                            <td>Content 3</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Rodapé</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="intro main-bg section">
+        <div class="menu-spacing"></div>
+        <div class="main-content intro-content">
+            <div class="intro-text-content span-media-two">
+                <h2>Contact Us</h2>
+                <p>We value your feedback and are here to assist you with any questions or concerns. To get in touch with us, please use the following contact details:
+                    Email: For general inquiries, please email us at lukasbo9765@gmail.com. For support requests, reach out to lukasbo97@gmail.com.
+                    We strive to respond to all messages within 24 hours. Your satisfaction is our top priority, and we look forward to assisting you.
+                    Thank you for getting in touch!
+                </p>
+            </div>
+            <div class="intro-img span-media-two">
+                <img src="assets/img/contact_us.svg" alt="Duas pessoas utilizando Nootebook com um circulo escrito 'CC' dentro">
+            </div>
+            <div class="contact-form">
+                <fieldset class="form-grid">
+                    <legend>Contact Form</legend>
+                    <div class="form-group">
+                        <label for="frist-name">Frist name</label>
+                        <input type="text" name="frist-name" id="frist-name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Your last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" placeholder="Your E-mail">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+    <footer class="white-bg footer">
+        <p><a rel="nofollow" target="_blank" href="https://www.instagram.com/luca_brbza/">Feito com <span class="heart">❤</span> por Lucas Barbosa</a></p>
+    </footer>
+    <a class="back-to-top" href="#home">➯</a>
+</body>
+</html>

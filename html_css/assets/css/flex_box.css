@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* Para padding e border fazer parte da box */
+    box-sizing: border-box;
+}
+
+.flex-container {
+    /* Mostra as box uma ao lado da outra */
+    display: flex;
+    /* Display flex tras por padrão direção de box em LINHA(row) */
+    flex-direction: row;
+    /* justify-content: Define posicionamento do conteúdo VERTICALMENTE */
+    justify-content: space-between;
+    /* align-item: Define posicionamento do conteúdo HORIZONTALMENTE */
+    align-items: flex-start;
+    /* Define o posicionamento do CONTEÚDO em SI (center=agrupamento)*/
+    align-content:center;
+    /* enrolar(wrap) - Faz com que o conteúdo se ajuste dentro do container */
+    flex-wrap: wrap;
+    background-color: darkcyan;
+    height: 500px;
+}
+
+
+.flex-item {
+    width: 33.33%;
+    background-color: darkslategray;
+    /* margin: 10px; */
+    box-shadow: inset 5px 5px 5px 0 darkgray;
+}
+/* :nth-child() Css Específico no terceiro filho da classe flex-item*/
+.flex-item:nth-child(3) {
+    font-size: 40px;
+}
+
+.flex-container2 {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: space-between;
+    align-content: center;
+    background-color: darkturquoise;
+    height: 500px;
+}
+
+.flex-container3 {
+    display: flex;
+    justify-content: space-between;
+    /* Mistura de flex-direction e flex-wrap | flex-flow: linha e enrolado*/
+    flex-flow: row wrap;
+    background-color: darkolivegreen;
+    height: 1000px;
+
+}
+
+.flex-item3 {
+    font-size: 30px;
+    /* Faz o conteúdo crescer para onde tem espaço livre
+    flex-grow: 1;
+    /* A base do contúdo ocupa 50% do espaço */
+    /* flex-basis: 50%; */
+    /* Permite o conteúdo encolher(shrink) ou não */
+    /* flex-shrink: 1; */
+    /* Atalho para grow shrink e basis respectivamente */
+    flex:1 1 50%;
+    height: 300px;
+    background-color: darkslategray;
+    /* margin: 10px; */
+    box-shadow: inset 5px 5px 5px 0 darkgray;
+}
+
+.flex-container4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Mistura de flex-direction e flex-wrap | flex-flow: linha e enrolado*/
+    flex-flow: row;
+    background-color: darkmagenta;
+    height: 600px;
+}
+
+.flex-item4 {
+    width: 100%;
+    background-color: darkorchid;
+}
+
+.flex-item4:nth-child(3) {
+    align-self: flex-end;
+}
+
+.flex-item4:nth-child(4) {
+    align-self: center;
+}
+
+.flex-item4:nth-child(2) {
+    align-self: stretch;
+}

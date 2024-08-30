@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+/* _________________________________________________________________________________________________________________________________________________________________ */
+.grid {
+    /* height: 100vh;
+    background-color: darkslategrey; */
+    max-width: 1200px;
+    /* Alinhando as dimensões do elemento por meio da margem ao centro */
+    margin: 0 auto;
+    display: grid;
+    /* fr=fragmento - ocupa o espaço que estiver sobrando relativo ao elemento pai */
+    /* vai repetir as colunas se tiver no mínimo 640px(auto-fill) assim em diante */
+    /* se tiver no máximo 639px vai utilizar apenas uma coluna ##MEDIAQUERIE EM UMA LINNHA## */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    /* Deixa uma brecha(gap) entre as colunas e linhas da grid */
+    gap: 30px 80px;
+    margin-bottom: 30px;
+}
+
+.grid div {
+    background-color: darkcyan;
+    height: 150px;
+}
+/* _________________________________________________________________________________________________________________________________________________________________ */
+.div2 {
+    /* height: 100vh;
+    background-color: darkolivegreen; */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    /* grid-template-rows: repeat(2, 1fr 2fr); */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.div2 div {
+    background-color: darkturquoise;
+}
+
+/* Pegando uma box específica e fazendo ela ocupar duas colunas*/
+.div2 div:nth-child(5) {
+    background-color: darkseagreen;
+    /* grid-row e column para ocupar mais de uma casa */
+    grid-row: span 2;
+    grid-column: span 2;
+}
+/* _________________________________________________________________________________________________________________________________________________________________ */
+.div3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: [um] 1fr [dois] 1fr [tres] 1fr [quatro];
+    grid-template-rows: [um] 1fr [dois] 1fr [tres] 1fr [quatro];
+    gap: 30px;
+}
+
+.div3 div {
+    background-color: darkgreen;
+    min-height: 150px;  
+}
+
+
+.div3 div:nth-child(5) {
+    background-color: darkseagreen;
+    /* grid-column-start: dois;
+    grid-column-end: quatro; */
+    /* grid-column: dois / quatro;
+    grid-row: dois / quatro; */
+
+    /* selecionando os espaçoes especificos entre da grid que a box ocupa */
+    grid-area: 2 / 2 / 4 / 4;
+    /* linha coluna / linha coluna */
+}
+
+/* _________________________________________________________________________________________________________________________________________________________________ */
+
+/* Usando media no caso da largura da tela for até 768, usar apenas 1 coluna */
+@media (max-width: 768px) {
+    .div2 div:nth-child(5) {
+        background-color: darkcyan;
+        /* grid-row e column para ocupar mais de uma casa */
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+    <style>
+        label {
+            /* cursor interativo quando passar em label */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form> Para criar um formulário, action=manda para determinado lugar, abre em nova guia quando interagido -->
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <p>O meu formulário</p>
+        <p>
+            <!-- Label baseado no id=nome do input abaixo(correlação) -->
+            <label for="nome">Nome</label>
+            <!-- Input do tipo texto, id=nome, name(vai p backend)=nome, placeholder=exibe mensagem pré definida no campo de preenchimento-->
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+        </p>
+        <p>
+            <!-- Label baseado no id=dev do input abaixo(correlação) -->
+            <label for="dev">Você é um developer?</label>
+            <!-- Input tipo checkbox, com id dev, name=dev, checkbox=value=Boolean -->
+            <input type="checkbox" id="dev" name="dev" value="sim"><br>
+            <label for="skills">É comunicativo?</label>
+            <input type="checkbox" id="skills" name="soft" value="sim">
+        </p>
+        <p>
+            Gênero:<br>
+            <!-- Label baseado no id=feminino do input abaixo(correlação) -->
+            <label for="feminino">Feminino</label>
+            <!-- Input do tipo radio(só pode ser marcado 01(um) retorna valor=feminino) -->
+            <input type="radio" id="feminino" name="genero" value="feminino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="outro">Outro</label>
+            <input type="radio" id="outro" name="genero" value="outro">
+        </p>
+        <p>
+            <label for="data">Data</label>
+            <input type="date" id="date" name="date" required>
+        </p>
+        <p>
+            <label for="datetime">Data e Hora</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+        </p>
+        <p>
+            <label for="time">Hora</label>
+            <input type="time" id="time" name="time">
+        </p>
+        <p>
+            <label for="cor">Cor preferida</label>
+            <input type="color" id="cor" name="cor-preferida">
+        </p>
+        <p>
+            <label for="email">E-mail para contato</label>
+            <input type="email" id="email" name="email-usuario" placeholder="Ex: nome123@gmail.com">
+        </p>
+        <!-- accept=só aceita documento pdf, multiple=aceita mais de um documeto -->
+            <label for="file">Anexar documento em pdf </label>
+            <input type="file" id="file" name="anexo" accept=".pdf" multiple>
+        <p>
+            <label for="number">Number</label>
+            <input type="number" id="number" name="numeros" placeholder="Digite um número" >
+        </p>
+        <p>
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" >
+        </p>
+        <p>
+            <label for="url">Sua Url</label>
+            <input type="url" id="url" name="url">
+        </p>
+        <p>
+            <label for="search">Pesquisa</label>
+            <input type="search" id="search" name="search">
+        </p>
+        <p>
+            <label for="textarea">Área do Texto</label>
+            <textarea></textarea>
+        </p>
+
+        <p>
+            <label for="select">Selecione alguma opção</label>
+            <select id="select" name="select">
+                <!-- label="Teste" para título das opções-->
+                <optgroup label="Teste">
+                    <!-- value vai para servidor, label=aparece na tela usuário -->
+                    <option value="Qualquer 1" label="Label 1"></option>
+                    <option value="Qualquer 2" label="Label 2"></option>
+                    <option value="Qualquer 3" label="Label 3"></option>
+                    <option value="Qualquer 4" label="Label 4"></option>
+                </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <!-- <button> Faz parte do formulário, com possibilidades de limpar ou enviar o mesmo. -->
+            <button type="reset">Apagar</button>
+            <button type="submit">Enviar</button>
+        </p>
+    </form>
+</body>
+</html>

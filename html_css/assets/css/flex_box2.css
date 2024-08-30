@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 24px;
+}
+
+/* Vai mostrar(display) o conteúdo acumulando para direita */
+.two-columns {
+    display: flex;
+}
+
+.two-columns .col {
+    background-color: darkcyan;
+    margin: 15px;
+    padding: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.gallery .imagem {
+    flex: 1 0 25%;
+    height: 50px;
+    background-color: darkslategrey;
+    margin: 10px;
+}

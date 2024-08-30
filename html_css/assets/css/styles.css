@@ -1,0 +1,75 @@
+* {
+    /* Tirando a margem e preenchimento do box border(um site nada mais é que um conjunto de box)*/
+    margin: 0;
+    padding: 0;
+}
+
+/* h1, p {
+    color:purple
+} */
+
+/* Quando for selecionar mais de um em conjuntos NAO ESQUECER DA VIRGULA */
+body div section h1, 
+body div section p {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.main-content p {
+    font-style: italic;
+}
+
+.main-content .heading {
+    color:brown;
+}
+
+.main-content h2.heading {
+    color: blueviolet;
+}
+
+/* Quando a tag passuir mais de uma classe */
+.pai.filha {
+    color: red;
+}
+
+div {
+    color: initial;
+}
+
+/* Quando TEM que ser um filho DIRETO de determinada classe */
+.classe-pai > .classe-filha > .classe-filha{
+    color: darkolivegreen;
+}
+
+/* h1~p Para todos os parágrafos de h1 em irmãos  */
+.irmaos h1~p {
+    color: gold;
+}
+
+/* Quando for preciso selecionar alguma tag irmã em especifico */
+.irmaos h1+p {
+    color: dodgerblue;
+}
+/* Quando ocorrer de existir um p irmão sucedente de h1 executa, ou h1 irmão sucedente de p(linha48) */
+.irmaos p+h1 {
+    color: deeppink;
+}
+/* Funciona também com classes, para todas as classes que herdam de determinada classe */
+.irmaos-em-class .one~.two {
+    color: indianred;
+}
+/* Para toda primeira vez que two aparecer herdando de one */
+.irmaos-em-class .one+.two {
+    color: aquamarine;
+}
+/* Pode ser com ou sem valor */
+[meu-atributo=valor] {
+    color: blueviolet;
+}
+/* ~= utilizado para quando quiser atribuir Css se tiver PELO MENOS determinado atributo */
+[meu-atributo2~=valor2] {
+    color: chartreuse;
+}

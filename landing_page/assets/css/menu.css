@@ -1,0 +1,64 @@
+.menu {
+    /* Colocando o menu fixado se for rolar a página */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--light-gray-white);
+}
+
+.menu-content {
+    /* Alinhando o Conteúdo do menu h1 li */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+/* a de li herda cor de h1 */
+.menu h1 a {
+    color: inherit;
+}
+
+.menu ul {
+    list-style: none;
+    /* Colocando os elementos da lista em flex(mesmo ja estando dentro de um flex) */
+    display: flex;
+}
+
+.menu ul li a {
+    /* Display block, pois estamos em flex e precisamos de padding */
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--primary-color);
+    /* Colocando os itens de navegação em posição relativa para o efeito(linha134) */
+    position: relative;
+}
+
+/* Adicionando depois(after) do link(a) em posição absoluta(só relativa linha122) */
+.menu ul li a::after {
+    /* Sempre necessário com after */
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    width: 0;
+    height: 0.2rem;
+    background-color: var(--secondary-color);
+    transition: all 300ms ease-in-out;
+}
+
+/* Quando passar o mouse em cima do a(hover) after ganha dimensões */
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
