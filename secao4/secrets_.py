@@ -1,12 +1,12 @@
 import secrets
 
-'''MESMA COISA DO RANDOM, SÓ QUE A LÓGICA(SEED) DE ALEATORIEDADE É SECRETA ;p'''
+'''MESMA COISA DO RANDOM, SÓ QUE A LÓGICA(SEED) DE ALEATORIEDADE É SECRETA ;p''' # noqa 501
 
 import string as s
 from secrets import SystemRandom as Sr
 
-print(''.join(Sr().choices(s.ascii_letters + s.digits + s.punctuation, k=12))) # Exemplo de gerador senha aleatória
-# python -c "import string as s;from secrets import SystemRandom as Sr; print(''.join(Sr().choices(s.ascii_letters + s.punctuation + s.digits,k=12)))"
+print(''.join(Sr().choices(s.ascii_letters + s.digits + s.punctuation, k=12)))  # Exemplo de gerador senha aleatória # noqa 501
+# python -c "import string as s;from secrets import SystemRandom as Sr; print(''.join(Sr().choices(s.ascii_letters + s.punctuation + s.digits,k=12)))" # noqa 501
 
 random = secrets.SystemRandom()
 

@@ -15,6 +15,6 @@ PASTA_ORIGINAL = os.path.join(DESKTOP, 'Modelos Editora')
 NOVA_PASTA = os.path.join(DESKTOP, 'Nova Pasta')
 
 '''rmtree exclui permanentemente, **não fica na lixeira**'''
-shutil.rmtree(NOVA_PASTA, ignore_errors=True) # Exemplo de como se deleta uma pasta
-shutil.copytree(PASTA_ORIGINAL, NOVA_PASTA) # Exemplo de como se copia uma pasta
-shutil.rmtree(NOVA_PASTA, ignore_errors=True) # Por fim apagando a pasta
+shutil.rmtree(NOVA_PASTA, ignore_errors=True)  # Exemplo de como se deleta uma pasta # noqa 501
+shutil.copytree(PASTA_ORIGINAL, NOVA_PASTA)  # Exemplo de como se copia uma pasta # noqa 501
+shutil.rmtree(NOVA_PASTA, ignore_errors=True)  # Por fim apagando a pasta

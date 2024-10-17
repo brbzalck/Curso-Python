@@ -78,6 +78,12 @@
     padding-top: 3rem;
 }
 
+.grid-main-heading2 {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+    padding-top: 3rem;
+}
+
 .grid-description {
     padding-bottom: 5rem;
 }
@@ -120,14 +126,28 @@
     margin-right: 10rem;
 }
 
+.grid .spacing-4 {
+    margin-right: 9rem;
+}
+
+.grid .spacing-5 {
+    margin-right: 10rem;
+}
+.list-center {
+    max-width: 90%;
+}
+
 .gallery-img {
     width: 100%;
+    height: 100%;
     max-width: 36rem;
     max-height: 36rem;
     overflow: hidden;
 }
 
 .gallery-img img {
+    width: 100%;
+    height: 100%;
     transition: all 300ms ease-in-out;
 }
 
@@ -137,6 +157,7 @@
 
 .gallery-description {
     padding-bottom: 1rem;
+    max-width: 100%;
 }
 /*  */
 .contact-form {
@@ -164,6 +185,12 @@
 .form-group label {
     display: block;
     margin-bottom: 1rem;
+}
+
+.message-right {
+    display: flex;
+    align-items: end;
+    justify-content: end;
 }
 
 .form-group input,
@@ -249,16 +276,40 @@ footer p {
     .intro-content, .grid {
         grid-template-columns: 1fr;
     }
+    .intro-text-content {
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+    }
+    .list-center{
+        padding-left: 1rem;
+    }
+    body {
+        max-width: 100%;
+    }
+
+    .heading-center {
+        font-size: 5rem;
+    }
+
     .span-media-two {
         grid-column: span 2;
     }
     .gallery-img {
-        width: 100%;
-        max-width: 100%;
-        max-height: 100%;
+        width: 36rem;
+        height: 36rem;
+        object-fit: cover;
     }
-    .gallery-img img{
-        width: 100%;
+    .gallery-img img {
+        width: 90%;
+        max-width: 100%;
+        height: auto;
+        padding-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-img img:hover {
+        transform: scale(1.1);
     }
     .menu {
         bottom: 0;
@@ -304,5 +355,10 @@ footer p {
 
     .menu-spacing {
         display: none;
+    }
+    .message-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

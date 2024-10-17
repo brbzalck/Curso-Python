@@ -6,19 +6,19 @@ CAMINHO_CSV = Path(__file__).parent / 'csv_exemplo.csv'
 
 lista_clientes = [
     {'Nome': 'Luiz Otávio', 'Endereço': 'Av 1, 22'},
-    {'Nome': 'João Silva', 'Endereço': 'R. 2, "1"'}, # Lista de dicts -> Clientes
+    {'Nome': 'João Silva', 'Endereço': 'R. 2, "1"'},  # Lista de dicts -> Clientes # noqa: E501
     {'Nome': 'Maria Sol', 'Endereço': 'Av B, 3A'},
 ]
 
 with open(CAMINHO_CSV, 'w') as arquivo:
     nome_colunas = lista_clientes[0].keys()
-    escritor = csv.DictWriter(arquivo, fieldnames=nome_colunas) # fieldnames=para colocar os nomes da colunas no arquivo(linha14)
+    escritor = csv.DictWriter(arquivo, fieldnames=nome_colunas)  # fieldnames=para colocar os nomes da colunas no arquivo(linha14) # noqa: E501
     # Escrevendo no meu arquivo csv em formato Dict
-    escritor.writeheader() # Exibi no cabeçalho
+    escritor.writeheader()  # Exibi no cabeçalho
 
     for cliente in lista_clientes:
         print(cliente)
-        escritor.writerow(cliente) # Escrevendo cliente no arquivo csv
+        escritor.writerow(cliente)  # Escrevendo cliente no arquivo csv
 
 # lista_clientes = [
 #     ['Luiz Otávio', 'Av 1, 22'],

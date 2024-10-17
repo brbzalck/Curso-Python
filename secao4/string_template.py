@@ -12,16 +12,18 @@ from datetime import datetime
 from pathlib import Path
 
 
-CAMINHO_ARQUIVO = Path(__file__).parent / 'string_template.txt' # Criando caminho 
+CAMINHO_ARQUIVO = Path(__file__).parent / 'string_template.txt'  # Criando caminho # noqa 501
 
 # with open(CAMINHO_ARQUIVO, 'w') as arquivo: # Criando meu arquivo
 #     arquivo.write('string_template.txt')
 
-locale.setlocale(locale.LC_ALL, '') # Setando a região que estou
+locale.setlocale(locale.LC_ALL, '')  # Setando a região que estou
+
 
 def converte_num_br(num: float) -> str:
-    brl = 'R$' + locale.currency(num, symbol=False, grouping=True) # Retorna a moeda em str sem simbolos e agrupados
+    brl = 'R$' + locale.currency(num, symbol=False, grouping=True)  # Retorna a moeda em str sem simbolos e agrupados # noqa 501
     return brl
+
 
 data = datetime(2022, 12, 28)
 dados = dict(
@@ -34,5 +36,5 @@ dados = dict(
 
 with open(CAMINHO_ARQUIVO, 'r') as arquivo:
     texto = arquivo.read()
-    template = string.Template(texto) # Classe template recebe texto que vai ser formatado(argumento=texto) (self=template)
-    print(template.substitute(dados)) # Usando método no objeto instânciado de Template substitute(argumento=dados)
+    template = string.Template(texto)  # Classe template recebe texto que vai ser formatado(argumento=texto) (self=template) # noqa 501
+    print(template.substitute(dados))  # Usando método no objeto instânciado de Template substitute(argumento=dados) # noqa 501

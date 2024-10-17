@@ -20,4 +20,4 @@ load_dotenv()
 
 # print(os.environ) # Pega todas as variáveis do ambiente
 
-print(os.getenv('BD_PASSWORD')) # Pegando Variável de ambiente específica
+print(os.getenv('BD_PASSWORD'))  # Pegando Variável de ambiente específica

@@ -21,7 +21,7 @@ def formata_tamanho(tamanho_em_bytes: int, base: int = 1000) -> str:
     # math.log vai retornar o logaritmo do tamanho_em_bytes
     # com a base (1000 por padrão), isso deve bater
     # com o nosso índice na abreviação dos tamanhos
-    indice_abreviacao_tamanhos = int(math.log(tamanho_em_bytes, base)) #''' TEM QUE ENTENDER LOG '''
+    indice_abreviacao_tamanhos = int(math.log(tamanho_em_bytes, base))  #''' TEM QUE ENTENDER LOG ''' # noqa 501
     # Por quanto nosso tamanho deve ser dividido para
     # gerar o tamanho correto.
     potencia = base ** indice_abreviacao_tamanhos
@@ -44,10 +44,10 @@ for root, dirs, files in os.walk(caminho):
 
     for file_ in files:
         caminho_completo_arquivo = os.path.join(root, file_)
-        # tamanho = os.path.getsize(caminho_completo_arquivo) # os.path.getsize(pega tam arq)
-        stats = os.stat(caminho_completo_arquivo) # os.stat tbm pega arquivo
-        tamanho = stats.st_size # so que demora mais
-        print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho)) 
-        #                                      Usando a função que converte tamanho do arquivo(mb kb b) no arquivo
+        # tamanho = os.path.getsize(caminho_completo_arquivo) # os.path.getsize(pega tam arq) # noqa 501
+        stats = os.stat(caminho_completo_arquivo)  # os.stat tbm pega arquivo
+        tamanho = stats.st_size  # so que demora mais
+        print('  ', the_counter, 'FILE:', file_, formata_tamanho(tamanho))
+        #                                      Usando a função que converte tamanho do arquivo(mb kb b) no arquivo # noqa 501
         # NÃO FAÇA ISSO (VAI APAGAR TUDO DA PASTA)
         # os.unlink(caminho_completo_arquivo)

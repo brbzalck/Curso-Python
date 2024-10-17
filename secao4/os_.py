@@ -17,14 +17,14 @@
 
 import os
 
-caminho = os.path.join('Desktop', 'curso', 'arquivo.txt') # .join - junta str num caminho só
+caminho = os.path.join('Desktop', 'curso', 'arquivo.txt')  # .join - junta str num caminho só # noqa 501
 print(caminho)
-diretorio, arquivo = os.path.split(caminho) # split separa diretório e arquivo
-nome_arquivo, extensao_arquivo = os.path.splitext(arquivo) # splitext separa nome do arquivo da extenção
+diretorio, arquivo = os.path.split(caminho)  # split separa diretório e arquivo
+nome_arquivo, extensao_arquivo = os.path.splitext(arquivo)  # splitext separa nome do arquivo da extenção # noqa 501
 print(nome_arquivo, extensao_arquivo)
-print(os.path.exists('/Users/luizotavio/Desktop/curso-python-rep')) # exists - verifca se existe
-print(os.path.abspath('.')) # Exibi o caminho até curso python
+print(os.path.exists('/Users/luizotavio/Desktop/curso-python-rep'))  # exists - verifca se existe # noqa 501
+print(os.path.abspath('.'))  # Exibi o caminho até curso python
 print(caminho)
-print(os.path.basename(caminho)) # Exibi ultimo nome do endereço
+print(os.path.basename(caminho))  # Exibi ultimo nome do endereço
 print(os.path.basename(diretorio))
-print(os.path.dirname(caminho)) # Exibi diretório
+print(os.path.dirname(caminho))  # Exibi diretório # noqa 501

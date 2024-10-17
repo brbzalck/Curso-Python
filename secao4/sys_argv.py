@@ -3,7 +3,7 @@
 
 import sys
 
-argumentos = sys.argv # Pegando quais argumentos existem na execução do sistema python
+argumentos = sys.argv  # Pegando quais argumentos existem na execução do sistema python # noqa 501
 qtd_argumentos = len(argumentos)
 
 if qtd_argumentos <= 1:

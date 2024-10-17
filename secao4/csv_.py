@@ -17,4 +17,3 @@
 # 2 - Cada registro deve estar em uma linha
 # 3 - Não deixar linhas ou espaços sobrando
 # 4 - Use o caractere de escape (") quando o delimitador aparecer no valor.
-
