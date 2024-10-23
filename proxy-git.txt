@@ -1,0 +1,9 @@
+config para rodar git com proxy
+
+git config --global http.proxy http://oliveira.barbosa:%24Escada99@acesso.aman.eb.mil.br:8080
+
+percentual coding para caracteres especiais
+https://en.wikipedia.org/wiki/Percent-encoding
+
+desvinculando proxy
+git config --global --unset http.proxy  
