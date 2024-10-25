@@ -17,3 +17,6 @@
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 # - Os cabeçalhos HTTP (Content-Type, Accept)
 # - O corpo da mensagem (Pode estar em vazio em alguns casos)
+
+"python -m http.server -d secao4/site_http/ 3333"
+# Executando módulo do python http.server na pasta site_http com a porta 3333
