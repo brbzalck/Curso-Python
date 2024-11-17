@@ -10,4 +10,4 @@
 # pip install django
 
 # pip freeze - para mostrar os pacotes e blibliotecas instaladas
-# pip freeze > requirements.txt - para salvar pacotes e blibliotecas utilizadas no projetop
+# pip freeze > requirements.txt - para salvar pacotes e blibliotecas utilizadas no projeto
