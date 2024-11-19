@@ -93,7 +93,7 @@ for pergunta in perguntas: # iterando minha lista perguntas para a VAR pergunta
     print() # pulando linha
 
     opcoes = pergunta['Opções'] # Variável para armazenar a chave opções da minha pergunta em específico
-    for i, opcao in enumerate(opcoes): # para cada índice e opção das minhas opções(enumerate para usar o i como enumerador)
+    for i, opcao in enumerate(opcoes, start=1): # para cada índice e opção das minhas opções(enumerate para usar o i como enumerador)
         print(f'{i})', opcao) # exibi na tela o índice da opção com a opção em si
     print() # pula linha
 
@@ -104,7 +104,7 @@ for pergunta in perguntas: # iterando minha lista perguntas para a VAR pergunta
     qtd_opcoes = len(opcoes) # Var guarda a qtd de opções
 
     if escolha.isdigit(): # Verificando se a resposta do usuário é digito
-        escolha_int = int(escolha) # caso não seja, VAR escolha_int continua NONE, e executa linha 118
+        escolha_int = int(escolha) - 1 # caso não seja, VAR escolha_int continua NONE, e executa linha 118
 
     if escolha_int is not None:  # se o número for digito, então escolha_int converte inteiro e deixa de ser none executando o if da linha
         if escolha_int >= 0 and escolha_int < qtd_opcoes: # se escolha não estiver entre os índices 0 a qnt_opcoes(len(opcoes))

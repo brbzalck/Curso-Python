@@ -1,6 +1,6 @@
 nome = 'Lucas'
-altura = 1.73
-peso = 60
+altura = 1.70
+peso = 66
 imc = ...
 
 imc = (60 / 1.73) / 1.73

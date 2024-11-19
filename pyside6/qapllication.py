@@ -1,0 +1,66 @@
+# QApplication e QPushButton de PySide6.QtWidgets
+# QApplication -> O Widget principal da aplicação
+# QPushButton -> Um botão
+# PySide6.QtWidgets -> Onde estão os widgets do PySide6
+
+# QMainWindow e centralWidget
+# -> QApplication (app)
+#   -> QMainWindow (window->setCentralWidget)
+#       -> CentralWidget (central_widget)
+#           -> Layout (layout)
+#               -> Widget 1 (botao1)
+#               -> Widget 2 (botao2)
+#               -> Widget 3 (botao3)
+#   -> show
+# -> exec
+import sys
+
+from PySide6.QtWidgets import (QApplication, QPushButton, QWidget, QGridLayout,
+                                QMainWindow)
+
+
+app = QApplication(sys.argv)
+window = QMainWindow()
+central_widget = QWidget()
+window.setCentralWidget(central_widget)
+window.setWindowTitle('Interface gráfica com PySide6')
+
+
+botao = QPushButton('Texto do botão')
+botao.setStyleSheet('font-size: 30px; color:green')
+
+botao2 = QPushButton('Texto do botão2')
+botao.setStyleSheet('font-size: 30px; color:dark-cyan')
+
+botao3 = QPushButton('Texto do botão3')
+botao3.setStyleSheet('font-size: 30px; color:red')
+
+
+layout = QGridLayout()
+central_widget.setLayout(layout)
+
+layout.addWidget(botao, 1, 1)
+layout.addWidget(botao2, 2, 1, 1, 2)
+# 2=Linha, 1=Coluna, 1=spanLinha, 2=spanColuna
+layout.addWidget(botao3, 1, 2)
+
+def slot_example(status_bar):
+    # usando método da variável status_bar linha40,41
+    status_bar.showMessage('O meu slot foi executado')
+
+# staturBar
+status_bar = window.statusBar()
+status_bar.showMessage('Mostrar mensagem na barra')
+
+# menuBar
+menu = window.menuBar()
+primeiro_menu = menu.addMenu('Primeiro menu')
+primeira_acao = primeiro_menu.addAction('Primeira ação')
+# Usando a lambda para executar a função slot_example
+# com o argumento status_bar
+primeira_acao.triggered.connect(
+    lambda: slot_example(status_bar)
+    )
+
+window.show()
+app.exec()

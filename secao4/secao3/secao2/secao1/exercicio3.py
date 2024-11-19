@@ -6,4 +6,4 @@ if primeiro_valor > segundo_valor:
 elif segundo_valor > primeiro_valor:
     print(f'O valor {segundo_valor} é maior que o valor {primeiro_valor}. ')
 else:  
-    print('O valor digitado é iguala.')
+    print('O valor digitado é igual.')
