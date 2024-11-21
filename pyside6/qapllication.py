@@ -15,6 +15,7 @@
 # -> exec
 import sys
 
+from PySide6.QtCore import Slot
 from PySide6.QtWidgets import (QApplication, QPushButton, QWidget, QGridLayout,
                                 QMainWindow)
 
@@ -44,9 +45,22 @@ layout.addWidget(botao2, 2, 1, 1, 2)
 # 2=Linha, 1=Coluna, 1=spanLinha, 2=spanColuna
 layout.addWidget(botao3, 1, 2)
 
+@Slot()
 def slot_example(status_bar):
-    # usando método da variável status_bar linha40,41
-    status_bar.showMessage('O meu slot foi executado')
+    def inner():
+        status_bar.showMessage('O meu slot foi executado')
+    return inner
+
+
+@Slot()
+def outro_slot(checked):
+    print('Está marcado? ', checked)
+
+@Slot()
+def terceiro_slot(action):
+    def inner():
+        outro_slot(action.isChecked()) # Retorna um Bool 
+    return inner
 
 # staturBar
 status_bar = window.statusBar()
@@ -58,9 +72,14 @@ primeiro_menu = menu.addMenu('Primeiro menu')
 primeira_acao = primeiro_menu.addAction('Primeira ação')
 # Usando a lambda para executar a função slot_example
 # com o argumento status_bar
-primeira_acao.triggered.connect(
-    lambda: slot_example(status_bar)
-    )
+primeira_acao.triggered.connect(slot_example(status_bar))
+
+segunda_acao = primeiro_menu.addAction('Segunda ação')
+segunda_acao.setCheckable(True)
+segunda_acao.toggled.connect(outro_slot)
+segunda_acao.hovered.connect(terceiro_slot(segunda_acao))
+
+botao.clicked.connect(terceiro_slot(segunda_acao))
 
 window.show()
 app.exec()
