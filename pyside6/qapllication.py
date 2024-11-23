@@ -17,7 +17,8 @@ import sys
 
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import (QApplication, QPushButton, QWidget, QGridLayout,
-                                QMainWindow)
+                                QMainWindow) # noqa
+
 
 class MyWindow(QMainWindow):
     def __init__(self, parent=None):
@@ -60,7 +61,7 @@ class MyWindow(QMainWindow):
 
     @Slot()
     def muda_msg_sttsbar(self):
-            self.status_bar.showMessage('O meu slot foi executado')
+        self.status_bar.showMessage('O meu slot foi executado')
 
     @Slot()
     def segunda_acao_marcada(self):

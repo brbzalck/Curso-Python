@@ -1,0 +1,5 @@
+max-line-length = 88           # Máximo de caracteres por linha (padrão: 79)
+ignore = E203, E266, E501      # Regras a ignorar
+exclude = .git, __pycache__, migrations/*  # Arquivos/diretórios ignorados
+max-complexity = 10            # Limite de complexidade ciclomática
+select = B,C,E,F,W,T4 
