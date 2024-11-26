@@ -1,18 +1,33 @@
 import sys
 
-from PySide6.QtWidgets import QApplication, QLabel
-
+from PySide6.QtGui import QIcon
+from variables import WINDOW_ICON_PATH
+from PySide6.QtWidgets import QApplication
+from info import Info
+from display import Display
 from main_window import MainWindow
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
 
-    label1 = QLabel('O Meu texto')
-    label1.setStyleSheet('font-size: 50px')
-    window.v_layout.addWidget(label1)
+    # Define Ícone
+    icon = QIcon(str(WINDOW_ICON_PATH))
+    window.setWindowIcon(icon)
+    app.setWindowIcon(icon)
+    if sys.platform.startswith('win'):
+        import ctypes
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(
+            u'CompanyName.ProductName.SubProduct.VersionInformation')
 
-    window.adjustFixedSize()
+    # Info
+    info = Info('2.0 ^ 10.0 = 1024')
+    window.addToVLayout(info)
+
+    # Display
+    display = Display()
+    window.addToVLayout(display)
+
 
     window.show()
     app.exec()
