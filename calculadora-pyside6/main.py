@@ -7,7 +7,7 @@ from info import Info
 from display import Display
 from main_window import MainWindow
 from styles import setupTheme
-from buttons import Button, ButtonsGrid
+from buttons import ButtonsGrid
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
@@ -24,7 +24,7 @@ if __name__ == '__main__':
             u'CompanyName.ProductName.SubProduct.VersionInformation')
 
     # Info
-    info = Info('2.0 ^ 10.0 = 1024')
+    info = Info('Sua conta')
     window.addWidgetToVLayout(info)
 
     # Display
@@ -32,11 +32,9 @@ if __name__ == '__main__':
     window.addWidgetToVLayout(display)
 
     # Grid
-    buttonsGrid = ButtonsGrid(display)
+    buttonsGrid = ButtonsGrid(display, info)
     window.vLayout.addLayout(buttonsGrid)
 
     window.adjustFixedSize()
     window.show()
     app.exec()
-
-    
