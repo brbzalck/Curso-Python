@@ -63,6 +63,8 @@ class ButtonsGrid(QGridLayout):
         self.info.setText(value)
 
     def _makeGrid(self):
+        self.display.eqRequested.connect(lambda: print(123))
+
         for row_number, row in enumerate(self._gridMask):
             for column_number, button_text in enumerate(row):
                 button = Button(button_text)
@@ -84,7 +86,7 @@ class ButtonsGrid(QGridLayout):
         if text == 'C':
             self._connectButtonClicked(button, self._clear)
 
-        if text in '◀':
+        if text == '◀':
             self._connectButtonClicked(button, self.display.backspace)
 
         if text in '+-/*^':
