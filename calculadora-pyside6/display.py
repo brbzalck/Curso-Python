@@ -2,13 +2,14 @@ from PySide6.QtGui import QKeyEvent
 from PySide6.QtWidgets import QLineEdit
 from variables import BIG_FONT_SIZE, TEXT_MARGIN, MINIMUN_WIDTH
 from PySide6.QtCore import Qt, Signal
-from utils import isEmpty
+from utils import isEmpty, isNumOrDot
 
 
 class Display(QLineEdit):
     eqPressed = Signal()
     delPressed = Signal()
     clearPressed = Signal()
+    inputPressed = Signal(str)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -50,5 +51,8 @@ class Display(QLineEdit):
         # Não passar daqui se não tiver texto
         if isEmpty(text):
             return event.ignore()
-        
-        print('texto', text)
+
+        if isNumOrDot(text):
+            print('Número/Ponto pressionado, sinal emitido')
+            self.inputPressed.emit(text)
+            return event.ignore
