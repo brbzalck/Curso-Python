@@ -64,7 +64,7 @@ class ButtonsGrid(QGridLayout):
 
     def _makeGrid(self):
         self.display.eqPressed.connect(self._eq)
-        self.display.delPressed.connect(self.display.backspace)
+        self.display.delPressed.connect(self._backspace)
         self.display.clearPressed.connect(self._clear)
         self.display.inputPressed.connect(self._insertToDisplay)
         self.display.operatorPressed.connect(self._configLeftOp)
@@ -121,6 +121,7 @@ class ButtonsGrid(QGridLayout):
 
         number = convertToNumber(displayText) * -1
         self.display.setText(str(number))
+        self.display.setFocus()
 
 
     @Slot()
@@ -133,6 +134,8 @@ class ButtonsGrid(QGridLayout):
             return
 
         self.display.insert(text)
+        self.display.setFocus()
+
 
     @Slot()
     def _clear(self):
@@ -141,6 +144,7 @@ class ButtonsGrid(QGridLayout):
         self._op = None
         self.equation = self._equationInitialValue
         self.display.clear()
+        self.display.setFocus()
 
     @Slot()
     def _configLeftOp(self, text):
@@ -156,13 +160,14 @@ class ButtonsGrid(QGridLayout):
 
         self._op = text
         self.equation = f'{self._left} {self._op} ??'
+        self.display.setFocus()
 
     @Slot()
     def _eq(self):
         displayText = self.display.text()
 
-        if not isValidNumber(displayText):
-            self._showError('Digite outro número.')
+        if not isValidNumber(displayText) or self._left is None:
+            self._showError('Conta incompleta.')
             return
         
         self._right = convertToNumber(displayText)
@@ -170,22 +175,30 @@ class ButtonsGrid(QGridLayout):
         result = 'error'
 
         try:
-            if '^' in self.equation and isinstance(self._left, float):
+            if '^' in self.equation and isinstance(self._left, int | float):
                 result = math.pow(self._left, self._right)
+                result = convertToNumber(str(result))
             else:
                 result = eval(self.equation)
         except ZeroDivisionError:
             self._showError('Divisão por Zero')
-        except OverflowError:
+        except OverflowError: 
             self._showError('Essa conta não pode ser realizada.')
 
         self.display.clear()
         self.info.setText(f'{self.equation} = {result}')
         self._right = None
         self._left = result
+        self.display.setFocus()
 
         if result == 'error':
             self._left = None
+
+    @Slot()
+    def _backspace(self):
+        self.display.backspace()
+        self.display.setFocus()
+
 
     def _makeDialog(self, text):
         msgBox = self.window.makeMsgBox()
