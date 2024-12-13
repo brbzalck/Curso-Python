@@ -18,6 +18,7 @@ cursor.execute(
     f'DELETE FROM sqlite_sequence WHERE name="{TABLE_NAME}"'
 )
 con.commit()
+
 #  Cria a tabela
 cursor.execute(
     f'CREATE TABLE IF NOT EXISTS {TABLE_NAME}'
@@ -31,13 +32,15 @@ con.commit()
 
 #  Registrar valores nas colunas das tabelas
 #  CUIDADO: sql injection
-cursor.execute(
-    f'INSERT INTO {TABLE_NAME} (id, name, weight) '
-    'VALUES (NULL, "Lucas Barbosa", 9.9), (NULL, "João Vitor", 16)'
+sql = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, weight) '
+    'VALUES '
+    '(?, ?)'
 )
+cursor.execute(sql, ['Joana', 4])
 con.commit()
-
-
+print(sql)
 
 cursor.close()
 con.close()
