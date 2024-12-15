@@ -52,7 +52,9 @@ cursor.executemany(sql, [
     {'nome': 'João', 'peso': 2},
     ])
 con.commit()
-print(sql)
 
 cursor.close()
 con.close()
+
+if __name__ == '__main__':
+    print(sql)
