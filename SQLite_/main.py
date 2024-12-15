@@ -38,7 +38,12 @@ sql = (
     'VALUES '
     '(?, ?)'
 )
-cursor.execute(sql, ['Joana', 4])
+# cursor.execute(sql, ['Joana', 4])
+cursor.executemany(sql, 
+                   [
+                       ['Joana', 4], ['Lucas', 5]
+                       ]
+                   )
 con.commit()
 print(sql)
 
