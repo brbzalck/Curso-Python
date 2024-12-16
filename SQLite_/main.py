@@ -11,6 +11,7 @@ con = sqlite3.connect(DB_FILE)
 cursor = con.cursor()
 
 #  CUIDADO!: fazendo delete sem where
+#  SEMPRE QUE EXISTIR DELETE VAI EXISTIR WHERE
 cursor.execute(
     f'DELETE FROM {TABLE_NAME}'
 )
@@ -53,8 +54,23 @@ cursor.executemany(sql, [
     ])
 con.commit()
 
-cursor.close()
-con.close()
-
 if __name__ == '__main__':
     print(sql)
+
+    #  SEMPRE QUE EXISTIR DELETE VAI EXISTIR WHERE
+    cursor.execute(
+    f'DELETE FROM {TABLE_NAME} '
+    'WHERE id = "3"'
+    )
+    con.commit()
+
+    cursor.execute(
+    f'SELECT * FROM {TABLE_NAME} '
+    )
+
+    for row in cursor.fetchall():
+        _id, name, weight = row
+        print(_id, name, weight)
+
+    cursor.close()
+    con.close()
