@@ -47,10 +47,10 @@ sql = (
 #                    )
 cursor.execute(sql, {'nome': 'Joana', 'peso': 4})
 cursor.executemany(sql, [
-    {'nome': 'Joana', 'peso': 4},
+    {'nome': 'Joana', 'peso': 52},
     {'nome': 'Lucas', 'peso': 5},
-    {'nome': 'Maria', 'peso': 7},
-    {'nome': 'João', 'peso': 2},
+    {'nome': 'Maria', 'peso': 61},
+    {'nome': 'João', 'peso': 72},
     ])
 con.commit()
 
@@ -61,6 +61,13 @@ if __name__ == '__main__':
     cursor.execute(
     f'DELETE FROM {TABLE_NAME} '
     'WHERE id = "3"'
+    )
+    con.commit()
+
+    cursor.execute(
+    f'UPDATE {TABLE_NAME} '
+    'SET name="Lucas", weight=67.20 '
+    'WHERE id = "1"'
     )
     con.commit()
 
