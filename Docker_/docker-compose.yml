@@ -8,7 +8,7 @@ services:
       - --mysql-native-password=ON
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
-      - --innodb_force_recovery=0
+      - --innodb_force_recovery=1
     volumes:
       - ./mysql_206:/var/lib/mysql
     ports:
