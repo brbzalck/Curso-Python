@@ -52,7 +52,39 @@ with connection:
             "age": 22,
         }
         result = cursor.execute(sql, data2)
+        # print(sql)
+        # print(data2)
+        # print(result)
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (f'INSERT INTO {TABLE_NAME} '
+               '(nome, idade) VALUES (%(name)s, %(age)s) ')
+        #   Nome e idade do BD         Nome e Idade do Dicionário
+        data3 = (
+            {"name": "Tiago","age": 22,},
+            {"name": "Julia","age": 23,},
+            {"name": "Letícia","age": 19,},
+
+            )
+        #  Quando usar executemany: colocar dentro de um iterável
+        result = cursor.executemany(sql, data3)
+        # print(sql)
+        # print(data3)
+        # print(result)
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (f'INSERT INTO {TABLE_NAME} '
+               '(nome, idade) VALUES (%s, %s) ')
+        #   Nome e idade do BD         Nome e Idade do Dicionário
+        data4 = (
+            ("Vanessa", 27),
+            ("Esther", 15)
+        )
+        #  Quando usar executemany: colocar dentro de um iterável
+        result = cursor.executemany(sql, data4)
         print(sql)
-        print(data2)
+        print(data4)
         print(result)
     connection.commit()
