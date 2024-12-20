@@ -6,6 +6,8 @@ import pymysql
 import dotenv
 import os
 
+TABLE_NAME = 'customers'
+
 dotenv.load_dotenv()
 
 connection = pymysql.connect(
@@ -19,13 +21,30 @@ connection = pymysql.connect(
 
 #  Usando context manager par fechar automaticamente a conexão:
 with connection:
-     with connection.cursor() as cursor:
-          cursor.execute(
-               'CREATE TABLE IF NOT EXISTS customers ('
-               'id INT NOT NULL AUTO_INCREMENT, '
-               'nome VARCHAR(50) NOT NULL, '
-               'idade INT NOT NULL, '
-               'PRIMARY KEY (id)'
-               ') '
-          )
-          print(cursor)
+    with connection.cursor() as cursor:
+        cursor.execute(
+            f'CREATE TABLE IF NOT EXISTS {TABLE_NAME} ('
+            'id INT NOT NULL AUTO_INCREMENT, '
+            'nome VARCHAR(50) NOT NULL, '
+            'idade INT NOT NULL, '
+            'PRIMARY KEY (id)'
+            ') '
+        )
+        #  esse comando limpa a tabela CUIDADO para usar em ambiente de produção
+        cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
+    connection.commit()
+    with connection.cursor() as cursor:    
+        cursor.execute(
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) VALUES ("Lucas", 24) '
+        )
+        cursor.execute(
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) VALUES ("Lucas", 24) '
+        )
+        result = cursor.execute(
+            f'INSERT INTO {TABLE_NAME} '
+            '(nome, idade) VALUES ("Lucas", 24) '
+        )
+        print(result)
+    connection.commit()
