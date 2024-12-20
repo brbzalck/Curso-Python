@@ -33,11 +33,26 @@ with connection:
         #  esse comando limpa a tabela CUIDADO para usar em ambiente de produção
         cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
     connection.commit()
+
     with connection.cursor() as cursor:
         sql = (f'INSERT INTO {TABLE_NAME} '
                '(nome, idade) VALUES (%s, %s) ')
         data = ('Lucas', 24)
         result = cursor.execute(sql, data)
-        print(sql, data)
+        # print(sql, data)
+        # print(result)
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        sql = (f'INSERT INTO {TABLE_NAME} '
+               '(nome, idade) VALUES (%(name)s, %(age)s) ')
+        #   Nome e idade do BD         Nome e Idade do Dicionário
+        data2 = {
+            "name": "Pedro",
+            "age": 22,
+        }
+        result = cursor.execute(sql, data2)
+        print(sql)
+        print(data2)
         print(result)
     connection.commit()
