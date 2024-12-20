@@ -34,6 +34,9 @@ with connection:
         cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
     connection.commit()
 
+    #  Começando a manipular dados a partir daqui
+
+    #  Inserindo valor usando um placeholder e um Iterável
     with connection.cursor() as cursor:
         sql = (f'INSERT INTO {TABLE_NAME} '
                '(nome, idade) VALUES (%s, %s) ')
@@ -43,6 +46,7 @@ with connection:
         # print(result)
     connection.commit()
 
+    #  Inserindo valor usando um placeholder e um Dicionário
     with connection.cursor() as cursor:
         sql = (f'INSERT INTO {TABLE_NAME} '
                '(nome, idade) VALUES (%(name)s, %(age)s) ')
@@ -57,6 +61,7 @@ with connection:
         # print(result)
     connection.commit()
 
+    #  Insrindo vários valores usando placeholder e uma Tupla de Dicionários
     with connection.cursor() as cursor:
         sql = (f'INSERT INTO {TABLE_NAME} '
                '(nome, idade) VALUES (%(name)s, %(age)s) ')
@@ -74,6 +79,7 @@ with connection:
         # print(result)
     connection.commit()
 
+    #  Inserindo vários valores usando placeholder e uma tupla de tuplas
     with connection.cursor() as cursor:
         sql = (f'INSERT INTO {TABLE_NAME} '
                '(nome, idade) VALUES (%s, %s) ')
@@ -84,7 +90,19 @@ with connection:
         )
         #  Quando usar executemany: colocar dentro de um iterável
         result = cursor.executemany(sql, data4)
-        print(sql)
-        print(data4)
-        print(result)
+        # print(sql)
+        # print(data4)
+        # print(result)
     connection.commit()
+
+    #  Lendo os dados com SELECT
+
+    with connection.cursor() as cursor:
+        sql = (
+            f'SELECT * FROM {TABLE_NAME} '
+               )
+        cursor.execute(sql)
+
+        for row in cursor.fetchall():
+            print(row)
+        data5 = cursor.fetchall()
