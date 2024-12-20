@@ -32,6 +32,7 @@ with connection:
         )
         #  esse comando limpa a tabela CUIDADO para usar em ambiente de produção
         cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
+    #  Use sempre o commit para SALVAR as alterações no BD
     connection.commit()
 
     #  Começando a manipular dados a partir daqui
@@ -114,13 +115,34 @@ with connection:
         # for row in data5:
         #     print(row)
 
-
+    #  Apagando com DELETE, WHERE e placeholders no PyMySQL
     with connection.cursor() as cursor:
         sql = (
-            #  sempre que existir DELETE DEVE existir WHERE
-            f'DELETE FROM {TABLE_NAME} WHERE id = 5 '
+            #  sempre que existir DELETE
+            f'DELETE FROM {TABLE_NAME} '
+            #  DEVE existir WHERE
+            'WHERE id = %s '
+            #  Utilizando placeholders para evitar SQL Injection
                )
-        cursor.execute(sql)
+        cursor.execute(sql, (5))
+        connection.commit()
+
+        cursor.execute(f'SELECT * FROM {TABLE_NAME} ')
+
+        # for row in cursor.fetchall():
+        #     print(row)
+
+
+    #  Editando com UPDATE, WHERE e placeholders no PyMySQL
+    with connection.cursor() as cursor:
+        sql = (
+            #  sempre que existir DELETE
+            f'UPDATE {TABLE_NAME} SET nome=%s, idade=%s '
+            #  DEVE existir WHERE
+            'WHERE id = %s '
+            #  Utilizando placeholders para evitar SQL Injection
+               )
+        cursor.execute(sql, ('Stefany', 25, 4))
         connection.commit()
 
         cursor.execute(f'SELECT * FROM {TABLE_NAME} ')
