@@ -4,7 +4,7 @@
 
 # .\venv\Scripts\activate para ativar um ambiente venv
 # ou então venv\Scripts\activate
-# desactivate para desativar
+# deactivate para desativar
 
 # pip é utilizado para instalar pacotes e blibliotecas
 # pip install django
