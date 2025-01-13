@@ -7,4 +7,4 @@ concat('Description de ', first_name),
 id from users;
 
 
-DELETE FROM profiles;
+-- DELETE FROM profiles;
