@@ -5,6 +5,7 @@
 import pymysql
 import dotenv
 import os
+import pymysql.cursors
 
 TABLE_NAME = 'customers'
 
@@ -17,6 +18,7 @@ connection = pymysql.connect(
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
     database=os.environ['MYSQL_DATABASE'],
+    cursorclass=pymysql.cursors.DictCursor
 )
 
 #  Usando context manager par fechar automaticamente a conexão:
@@ -143,9 +145,22 @@ with connection:
             #  Utilizando placeholders para evitar SQL Injection
                )
         cursor.execute(sql, ('Stefany', 25, 4))
-        connection.commit()
 
         cursor.execute(f'SELECT * FROM {TABLE_NAME} ')
 
+        # for row in cursor.fetchall():
+        #     _id, name, idade = row
+        #     print(_id, name, idade)
+
+        print()
+        print('For 1')
+        for row in cursor.fetchall():
+            print(row)  # row agora é um dict
+        
+        print()
+        print('For 2')
+        cursor.scroll(0, 'absolute')
         for row in cursor.fetchall():
             print(row)
+
+    connection.commit()
