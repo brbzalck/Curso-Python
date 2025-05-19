@@ -29,4 +29,4 @@ print(re.findall(r'[a-z]aria', texto))
 # find em range de a-z minúsculo, A-Z MAIÚSCULO e 0-9 numérico
 print(re.findall(r'[a-zA-Z0-9]aria|[a-zA-Z0-9]oão', texto))
 # ignorando case MAIÚSCULO ou minúsculo da pesquisa
-print(re.findall(r'JoÃo|MaRiA', texto, re.IGNORECASE))
+print(re.findall(r'JoÃo|MaRiA', texto, flags=re.IGNORECASE))
